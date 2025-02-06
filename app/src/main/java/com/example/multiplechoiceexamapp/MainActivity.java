@@ -87,34 +87,49 @@ public class MainActivity extends AppCompatActivity {
 
         //get key
         int key = generator.getKey();
-        key += 1;
 
         //- if answer equals key
         //- increase correct
-        if(key == answeredBtn)
-            generator.increaseCorrect();
+
+        int selectedAnswerIndex = 0;
+        if(answeredBtn == R.id.answer1)
+            selectedAnswerIndex = 1;
+        else if(answeredBtn == R.id.answer2)
+            selectedAnswerIndex = 2;
+        else if(answeredBtn == R.id.answer3)
+            selectedAnswerIndex = 3;
+        else if(answeredBtn == R.id.answer4)
+            selectedAnswerIndex = 4;
 
 
-        //- deal with the case where user does not click any button
+        if(selectedAnswerIndex!=0)
+        {
+            if(selectedAnswerIndex == key)
+                generator.increaseCorrect();
 
-        //increase total
-        generator.increaseTotal();
 
-        //get correct , get total
-        int correct = generator.getCorrect();
-        int total = generator.getTotal();
+            //- deal with the case where user does not click any button
 
-        //display correct and total
-        TextView resultView = findViewById(R.id.txtViewResult);
-        resultView.setText(correct+"/"+total);
+            //increase total
+            generator.increaseTotal();
 
-        //- enable submit button, disable next button
-        Button btnSubmit = findViewById(R.id.btnSubmit);
-        btnSubmit.setEnabled(false);
+            //get correct , get total
+            int correct = generator.getCorrect();
+            int total = generator.getTotal();
 
-        //disable next button
-        Button btnNext = findViewById(R.id.btnNext);
-        btnNext.setEnabled(true);
+            //display correct and total
+            TextView resultView = findViewById(R.id.txtViewResult);
+            resultView.setText(correct+"/"+total);
+
+            //- enable submit button, disable next button
+            Button btnSubmit = findViewById(R.id.btnSubmit);
+            btnSubmit.setEnabled(false);
+
+            //disable next button
+            Button btnNext = findViewById(R.id.btnNext);
+            btnNext.setEnabled(true);
+        }
+
 
     }
 
