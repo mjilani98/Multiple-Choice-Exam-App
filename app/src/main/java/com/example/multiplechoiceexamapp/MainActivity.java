@@ -1,6 +1,7 @@
 package com.example.multiplechoiceexamapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public void initialize(QuestionsGenerator generator)
     {
         //- generate
-        generator.generate();
+//        generator.generate();
 
         //- get question, four answers
         String question = generator.getQuestions();
@@ -72,8 +73,48 @@ public class MainActivity extends AppCompatActivity {
         Button btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setEnabled(true);
 
+        //disable next button
         Button btnNext = findViewById(R.id.btnNext);
         btnNext.setEnabled(false);
+
+    }
+
+    public void submit(View v)
+    {
+        //find out which button is clicked
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        int answeredBtn = radioGroup.getCheckedRadioButtonId();
+
+        //get key
+        int key = generator.getKey();
+        key += 1;
+
+        //- if answer equals key
+        //- increase correct
+        if(key == answeredBtn)
+            generator.increaseCorrect();
+
+
+        //- deal with the case where user does not click any button
+
+        //increase total
+        generator.increaseTotal();
+
+        //get correct , get total
+        int correct = generator.getCorrect();
+        int total = generator.getTotal();
+
+        //display correct and total
+        TextView resultView = findViewById(R.id.txtViewResult);
+        resultView.setText(correct+"/"+total);
+
+        //- enable submit button, disable next button
+        Button btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit.setEnabled(false);
+
+        //disable next button
+        Button btnNext = findViewById(R.id.btnNext);
+        btnNext.setEnabled(true);
 
     }
 

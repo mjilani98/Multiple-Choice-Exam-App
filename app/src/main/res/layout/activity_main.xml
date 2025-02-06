@@ -70,6 +70,7 @@
         android:backgroundTint="@color/Goldenrod"
         android:textColor="@color/black"
         android:text="Submit"
+        android:onClick="submit"
         />
 
 <!--Score Text view-->
