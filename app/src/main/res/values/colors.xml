@@ -2,4 +2,36 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="CrimsonRed">#DC143C</color>
+    <color name="SlateGray">#708090</color>
+    <color name="Goldenrod">#DAA520</color>
+    <color name="Ivory">#FFFFF0</color>
+
+    <color name="RoyalBlue">#4169E1</color>
+    <color name="LightMint">#A8E6CF</color>
+    <color name="Peach">#FFDAB9</color>
+    <color name="DustyRose">#D4A5A5</color>
+
+    <color name="Teal">#008080</color>
+    <color name="Cream">#FFF5E1</color>
+    <color name="Rust">#B7410E</color>
+    <color name="OliveGreen">#808000</color>
+
+    <color name="Lavender">#E6E6FA</color>
+    <color name="Charcoal">#36454F</color>
+    <color name="MintGreen">#98FF98</color>
+    <color name="MustardYellow">#FFDB58</color>
+
+    <color name="Turquoise">#40E0D0</color>
+    <color name="RoseGold">#B76E79</color>
+    <color name="LightCoral">#F08080</color>
+    <color name="PaleBlue">#AFDCEC</color>
+
+    <color name="DarkViolet">#9400D3</color>
+    <color name="SandyBrown">#F4A300</color>
+    <color name="SoftLavender">#B9AEDC</color>
+    <color name="ForestGreen">#228B22</color>
+
+
 </resources>
