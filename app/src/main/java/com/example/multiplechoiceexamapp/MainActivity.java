@@ -195,22 +195,6 @@ public class MainActivity extends AppCompatActivity {
             //disable next button
             Button btnNext = findViewById(R.id.btnNext);
             btnNext.setEnabled(false);
-
-
-
-        //- deal with case where there are no more questions
-        //get the index of the current question to know if it arrives to the last question
-        int index = generator.getIndex();
-
-        //the size is the number of questions available
-        int size = generator.getSize();
-
-
-
-
-
-
-
     }
 
 
