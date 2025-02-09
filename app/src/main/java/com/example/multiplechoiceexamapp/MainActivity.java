@@ -1,5 +1,6 @@
 package com.example.multiplechoiceexamapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         int answeredBtn = radioGroup.getCheckedRadioButtonId();
 
+
+        // 
         //get key
         int key = generator.getKey();
 
@@ -102,10 +105,13 @@ public class MainActivity extends AppCompatActivity {
             selectedAnswerIndex = 4;
 
 
-        if(selectedAnswerIndex!=0)
+        if(selectedAnswerIndex!=0) //check if the user did not select any answer
         {
             if(selectedAnswerIndex == key)
                 generator.increaseCorrect();
+
+            RadioButton btn = findViewById(selectedAnswerIndex);
+            btn.setTextColor(Color.parseColor("#228B22"));
 
 
             //- deal with the case where user does not click any button
@@ -175,6 +181,13 @@ public class MainActivity extends AppCompatActivity {
         answer2Btn.setChecked(false);
         answer3Btn.setChecked(false);
         answer4Btn.setChecked(false);
+
+        //make them all black
+        answer1Btn.setTextColor(Color.parseColor("#FF000000"));
+        answer2Btn.setTextColor(Color.parseColor("#FF000000"));
+        answer3Btn.setTextColor(Color.parseColor("#FF000000"));
+        answer4Btn.setTextColor(Color.parseColor("#FF000000"));
+
 
         //- get correct, total
         int correct = generator.getCorrect();
